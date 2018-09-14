@@ -5,7 +5,7 @@ which cmake > /dev/null
 if [ $? -gt 0 ]
 then
   echo "Install cmake first."
-  return 1
+  exit 1
 fi
 
 # Test for existence of git
@@ -13,7 +13,7 @@ which git > /dev/null
 if [ $? -gt 0 ]
 then
   echo "Install git first."
-  return 1
+  exit 1
 fi
 
 # Clone CommonMark repo
@@ -37,7 +37,7 @@ cmake ..
 if [ $? -gt 0 ]
 then
   echo "Cmake seems to have failed. Not continuing with updating Ccmark."
-  return 2
+  exit 2
 fi
 
 cd $here
