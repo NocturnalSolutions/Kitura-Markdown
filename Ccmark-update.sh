@@ -41,7 +41,7 @@ then
 fi
 
 cd $here
-cp /tmp/cmark/build/src/*.h sources/Ccmark/
+cp /tmp/cmark/build/src/*.h Sources/Ccmark/
 
 # Replace angle brackets in include lines in cmark.h
 sed -E -e 's/\#include \<(.+)\>/\#include \"\1\"/g' Sources/Ccmark/cmark.h > Sources/Ccmark/cmark.h.tmp && mv Sources/Ccmark/cmark.h.tmp Sources/Ccmark/cmark.h
