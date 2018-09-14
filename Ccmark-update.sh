@@ -44,9 +44,11 @@ cd $here
 cp /tmp/cmark/build/src/*.h Sources/Ccmark/
 
 # Replace angle brackets in include lines in cmark.h
-sed -E -e 's/\#include \<(.+)\>/\#include \"\1\"/g' Sources/Ccmark/cmark.h > Sources/Ccmark/cmark.h.tmp && mv Sources/Ccmark/cmark.h.tmp Sources/Ccmark/cmark.h
+sed -E -e 's/\#include <(.+)>/\#include \"\1\"/g' Sources/Ccmark/cmark.h > Sources/Ccmark/cmark.h.tmp && mv Sources/Ccmark/cmark.h.tmp Sources/Ccmark/cmark.h
 
 # Remove unwanted main.c file
 rm Sources/Ccmark/main.c
 
 rm -rf /tmp/cmark/
+
+echo "Finished updating Ccmark."
